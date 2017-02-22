@@ -35,8 +35,8 @@ class ViewController: UIViewController {
         let dateFormatter = DateFormatter()
         let timeFormatter = DateFormatter()
         
-        dateFormatter.dateStyle = .medium
-        timeFormatter.timeStyle = .long
+        dateFormatter.dateStyle = .short
+        timeFormatter.timeStyle = .full
         
         
         date.text = dateFormatter.string(from: NSDate() as Date)
