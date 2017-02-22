@@ -11,15 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
+    //@IBOutlet var timeLabel: UILabel!
+    //@IBOutlet var dateLabel: UILabel!
     
+    @IBOutlet var time: UILabel!
+    @IBOutlet var date: UILabel!
+    
+    var timer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        
+        self.updateTimer() 
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,16 +33,15 @@ class ViewController: UIViewController {
     
     func updateTimer() {
         
-        
-        let timeFormatter = DateFormatter()
         let dateFormatter = DateFormatter()
+        let timeFormatter = DateFormatter()
         
         dateFormatter.dateStyle = .medium
         timeFormatter.timeStyle = .medium
         
         
-        dateLabel.text = dateFormatter.string(from: NSDate() as Date)
-        timeLabel.text = timeFormatter.string(from: NSDate() as Date)
+        date.text = dateFormatter.string(from: NSDate() as Date)
+        time.text = timeFormatter.string(from: NSDate() as Date)
         
         
         
